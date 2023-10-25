@@ -6,18 +6,20 @@ slideImages = [
     "img/05.jpg",
 ];
 const imgContainer = document.querySelector(".items")
+console.log(imgContainer);
 let imgString = "";
 for (let i = 0; i < slideImages.length; i++) {
     const curImage = slideImages[i];
-    imgString += `<img src="${curImage}" class="item" alt="">`
+    imgString += `<div class="item"><img src="${curImage}" alt=""></div>`
 }
+console.log(imgString)
 imgContainer.innerHTML += imgString
-const slides = document.querySelectorAll("item")
-console.log(slides);
 const firstImg = document.querySelector(".item")
 firstImg.classList.add("active")
 const prev = document.querySelector(".prev")
 const next = document.querySelector(".next")
+const slides = document.querySelectorAll(".item");
+console.log(slides);
 activeImgIndex = 0
 prev.addEventListener("click", function(event) {
     event.preventDefault()
@@ -29,7 +31,7 @@ prev.addEventListener("click", function(event) {
 })
 next.addEventListener("click", function(event) {
     event.preventDefault();
-    if (activeImgIndex < slides.length) {
+    if (activeImgIndex < slides.length - 1) {
         slides[activeImgIndex].classList.remove("active")
         activeImgIndex++;
         slides[activeImgIndex].classList.add("active")
