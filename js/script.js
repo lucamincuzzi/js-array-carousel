@@ -14,13 +14,12 @@ for (let i = 0; i < slideImages.length; i++) {
 }
 console.log(imgString)
 imgContainer.innerHTML += imgString
-const firstImg = document.querySelector(".item")
-firstImg.classList.add("active")
 const prev = document.querySelector(".prev")
 const next = document.querySelector(".next")
 const slides = document.querySelectorAll(".item");
 console.log(slides);
 activeImgIndex = 0
+slides[activeImgIndex].classList.add("active")
 prev.addEventListener("click", function(event) {
     event.preventDefault()
     if (activeImgIndex > 0) {
